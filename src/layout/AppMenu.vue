@@ -1,6 +1,4 @@
 <script setup>
-import simplebar from 'simplebar-vue';
-
 const model = ref([
   {
     label: 'Home',
@@ -86,73 +84,13 @@ const model = ref([
         to: '/pages/empty'
       }
     ]
-  },
-  {
-    label: 'Hierarchy',
-    items: [
-      {
-        label: 'Submenu 1',
-        icon: 'pi pi-fw pi-bookmark',
-        items: [
-          {
-            label: 'Submenu 1.1',
-            icon: 'pi pi-fw pi-bookmark',
-            items: [
-              { label: 'Submenu 1.1.1', icon: 'pi pi-fw pi-bookmark' },
-              { label: 'Submenu 1.1.2', icon: 'pi pi-fw pi-bookmark' },
-              { label: 'Submenu 1.1.3', icon: 'pi pi-fw pi-bookmark' }
-            ]
-          },
-          {
-            label: 'Submenu 1.2',
-            icon: 'pi pi-fw pi-bookmark',
-            items: [{ label: 'Submenu 1.2.1', icon: 'pi pi-fw pi-bookmark' }]
-          }
-        ]
-      },
-      {
-        label: 'Submenu 2',
-        icon: 'pi pi-fw pi-bookmark',
-        items: [
-          {
-            label: 'Submenu 2.1',
-            icon: 'pi pi-fw pi-bookmark',
-            items: [
-              { label: 'Submenu 2.1.1', icon: 'pi pi-fw pi-bookmark' },
-              { label: 'Submenu 2.1.2', icon: 'pi pi-fw pi-bookmark' }
-            ]
-          },
-          {
-            label: 'Submenu 2.2',
-            icon: 'pi pi-fw pi-bookmark',
-            items: [{ label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-bookmark' }]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    label: 'Get Started',
-    items: [
-      {
-        label: 'Documentation',
-        icon: 'pi pi-fw pi-book',
-        to: '/documentation'
-      },
-      {
-        label: 'View Source',
-        icon: 'pi pi-fw pi-github',
-        url: 'https://github.com/primefaces/sakai-vue',
-        target: '_blank'
-      }
-    ]
   }
 ]);
 </script>
 
 <template>
-  <simplebar>
-    <ul class="layout-menu">
+  <ul class="layout-menu">
+    <SimpleBar>
       <template v-for="(item, i) in model" :key="item">
         <AppMenuItem
           v-if="!item.separator"
@@ -161,6 +99,6 @@ const model = ref([
         ></AppMenuItem>
         <li v-if="item.separator" class="menu-separator"></li>
       </template>
-    </ul>
-  </simplebar>
+    </SimpleBar>
+  </ul>
 </template>

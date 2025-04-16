@@ -9,12 +9,17 @@ import Aura from '@primeuix/themes/aura';
 // 自定义主题
 import { definePreset } from '@primeuix/themes';
 import myTheme from './scss/theme.json';
-// 滚动条样式
+// 滚动条
+import Simplebar from 'simplebar-vue';
 import 'simplebar-vue/dist/simplebar.min.css';
 
 const MyPreset = definePreset(Aura, myTheme);
 
-createApp(App)
+const app = createApp(App);
+
+app.component('SimpleBar', Simplebar);
+
+app
   .use(pinia)
   .use(router)
   .use(PrimeVue, {
