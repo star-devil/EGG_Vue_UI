@@ -3,7 +3,6 @@
     <Divider />
     <div
       class="overflow-hidden w-full border-0 flex items-center cursor-pointer"
-      @click="toggleUserMenu"
     >
       <Avatar
         image="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png"
@@ -25,32 +24,6 @@ const userMenuItems = ref([
   {
     label: 'Profile',
     icon: 'pi pi-user'
-  },
-  {
-    label: 'Settings',
-    icon: 'pi pi-cog'
-  },
-  {
-    label: 'Logout',
-    icon: 'pi pi-sign-out'
-  },
-  {
-    separator: true
-  },
-  {
-    label: 'Collapse',
-    icon: 'pi pi-angle-double-left',
-    command: () => {
-      collapseMenu();
-    }
   }
 ]);
-
-const toggleUserMenu = (event: Event) => {
-  menu.value.toggle(event);
-};
-
-const collapseMenu = () => {
-  menu.value.hide();
-};
 </script>

@@ -89,8 +89,8 @@ const model = ref([
 </script>
 
 <template>
-  <ul class="layout-menu">
-    <SimpleBar>
+  <SimpleBar class="menu-scrollbar">
+    <ul class="layout-menu">
       <template v-for="(item, i) in model" :key="item">
         <AppMenuItem
           v-if="!item.separator"
@@ -99,6 +99,6 @@ const model = ref([
         ></AppMenuItem>
         <li v-if="item.separator" class="menu-separator"></li>
       </template>
-    </SimpleBar>
-  </ul>
+    </ul>
+  </SimpleBar>
 </template>
