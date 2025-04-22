@@ -1,3 +1,4 @@
+/** @description: 顶部左侧工具栏 */
 <template>
   <div class="inline-block text-xl">
     <Button variant="text" icon="pi pi-bars" @click="collapseMenu"> </Button>

@@ -22,13 +22,6 @@ $breakpoints: (
   border-radius: 1rem;
   transition: all var(--layout-section-transition-duration);
 
-  &.collapsed {
-    width: 0;
-    padding: 0;
-    visibility: hidden;
-    opacity: 0;
-  }
-
   @media screen and (width >= breakpoints('xl')) {
     width: 20rem;
   }

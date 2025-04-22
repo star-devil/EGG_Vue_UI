@@ -3,6 +3,7 @@ import Components from 'unplugin-vue-components/vite';
 import eslint from 'vite-plugin-eslint2';
 import { PrimeVueResolver } from '@primevue/auto-import-resolver';
 import tailwindcss from '@tailwindcss/vite';
+import MotionResolver from 'motion-v/resolver';
 
 export default function setupCommonPlugins() {
   return [
@@ -15,7 +16,7 @@ export default function setupCommonPlugins() {
       extensions: ['vue', 'tsx', 'jsx'],
       include: [/\.vue$/, /\.vue\?vue/, /\.tsx$/],
       deep: true, // 搜索子目录
-      resolvers: [PrimeVueResolver()]
+      resolvers: [PrimeVueResolver(), MotionResolver()]
     }),
     tailwindcss()
   ];

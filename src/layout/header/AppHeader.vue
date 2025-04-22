@@ -9,6 +9,4 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-import AppBreadcrumb from './AppBreadcrumb.vue';
-</script>
+<script lang="ts" setup></script>
