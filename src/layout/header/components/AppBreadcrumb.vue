@@ -1,22 +1,23 @@
-<template>
-  <div class="inline-block">
-    <!-- <Breadcrumb class="menu-breadcrumb" :home="home" :model="items" /> -->
-  </div>
-</template>
+<script setup lang="ts">
+import { useBreadcrumb } from '../../composables/useBreadcrumb';
 
-<script lang="ts" setup>
-// const home = ref({
-//   icon: 'pi pi-home'
-// });
-// const items = ref([
-//   { label: 'Electronics' },
-//   { label: 'Computer' },
-//   { label: 'Accessories' }
-// ]);
+const { breadcrumbs } = useBreadcrumb();
 </script>
 
-<style scoped lang="scss">
-// .menu-breadcrumb {
-//   padding: var(--p-button-padding-y) var(--p-button-padding-x);
-// }
-</style>
+<template>
+  <Breadcrumb>
+    <BreadcrumbList>
+      <template v-for="(item, index) in breadcrumbs" :key="index">
+        <BreadcrumbItem>
+          <template v-if="item.url">
+            <BreadcrumbLink :href="item.url">{{ item.title }}</BreadcrumbLink>
+          </template>
+          <template v-else>
+            <BreadcrumbPage>{{ item.title }}</BreadcrumbPage>
+          </template>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator v-if="index < breadcrumbs.length - 1" />
+      </template>
+    </BreadcrumbList>
+  </Breadcrumb>
+</template>
