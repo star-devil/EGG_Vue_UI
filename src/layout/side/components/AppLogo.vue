@@ -22,6 +22,5 @@
         >PRIME<span class="text-primary">APP</span></span
       >
     </span>
-    <Divider />
   </div>
 </template>

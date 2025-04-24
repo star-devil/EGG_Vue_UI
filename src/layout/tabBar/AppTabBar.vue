@@ -1,6 +1,6 @@
 <template>
   <div class="tabs-chrome">
-    <Tabs value="/dashboard" scrollable>
+    <!-- <Tabs value="/dashboard" scrollable>
       <TabList>
         <Tab
           v-for="tab in items"
@@ -26,15 +26,15 @@
           </router-link>
         </Tab>
       </TabList>
-    </Tabs>
+    </Tabs> -->
   </div>
 </template>
 
 <script setup lang="ts">
-const items = ref([
-  { route: '/dashboard', label: 'Dashboard', icon: 'pi pi-home' },
-  { route: '/transactions', label: 'Transactions', icon: 'pi pi-chart-line' },
-  { route: '/products', label: 'Products', icon: 'pi pi-list' },
-  { route: '/messages', label: 'Messages', icon: 'pi pi-inbox' }
-]);
+// const items = ref([
+//   { route: '/dashboard', label: 'Dashboard', icon: 'pi pi-home' },
+//   { route: '/transactions', label: 'Transactions', icon: 'pi pi-chart-line' },
+//   { route: '/products', label: 'Products', icon: 'pi pi-list' },
+//   { route: '/messages', label: 'Messages', icon: 'pi pi-inbox' }
+// ]);
 </script>

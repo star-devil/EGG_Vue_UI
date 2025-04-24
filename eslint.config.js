@@ -189,7 +189,8 @@ export default [
       '.husky',
       'Dockerfile',
       'package-lock.json',
-      'pnpm-lock.yaml'
+      'pnpm-lock.yaml',
+      'src/components/ui/**'
     ]
   }
 ];

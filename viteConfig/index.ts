@@ -10,10 +10,9 @@ const loadInitLog = () => {
     fg: '\x1b[35m',
     bg: '\x1b[43m'
   };
-  const LINK =
-    'https://github.com/star-devil/learning-Docs/blob/master/%E4%BB%8E%E5%A4%B4%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAvite%E9%A1%B9%E7%9B%AE.md';
+  const LINK = 'https://github.com/star-devil/learning-Docs';
   console.log(
-    `${colors.fg} 😊说明文档在这里==>:🔗${colors.bg}${LINK}${colors.reset}，有问题欢迎指正。`
+    `${colors.fg} 😊我的学习记录在这里==>:🔗${colors.bg}${LINK}${colors.reset}，欢迎star。`
   );
 };
 export default {

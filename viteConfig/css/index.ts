@@ -4,21 +4,12 @@ import autoprefixer from 'autoprefixer';
 export default function (): CSSOptions {
   const preprocessorOptions = {
     scss: {
-      api: 'modern-compiler',
-      additionalData: '$color: red;'
+      api: 'modern-compiler'
     }
   };
   const postcss = {
     plugins: [
       autoprefixer({
-        overrideBrowserslist: [
-          'Android 4.1',
-          'iOS 7.1',
-          'Chrome > 31',
-          'ff > 31',
-          'ie >= 8',
-          'last 2 versions'
-        ],
         grid: true
       })
     ]

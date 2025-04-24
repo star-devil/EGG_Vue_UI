@@ -11,8 +11,8 @@ export default function (): Resolve {
 
   // 别名配置相对于当前文件路径
   const alias: AliasOptions = {
-    '@': path.resolve(projectRoot, 'src'),
-    '@assets': path.resolve(projectRoot, 'src/assets')
+    '@': path.resolve(projectRoot, './src'),
+    '@assets': path.resolve(projectRoot, './src/assets')
   };
   return { alias };
 }
