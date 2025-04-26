@@ -19,9 +19,23 @@ interface MenuGroup {
   menu: MenuItem[];
 }
 
-export function generateRoutesFromMenu(
+const getFirstMenuItem = (
   menuData: MenuGroup[]
-): RouteRecordRaw[] {
+): { path: string; menuItem: MenuItem } | null => {
+  for (const group of menuData) {
+    for (const menuItem of group.menu) {
+      if (menuItem.items && menuItem.items.length > 0) {
+        return { path: menuItem.items[0].url, menuItem };
+      }
+    }
+  }
+  return null;
+};
+
+export function generateRoutesFromMenu(menuData: MenuGroup[]): {
+  routes: RouteRecordRaw[];
+  firstMenuItem: ReturnType<typeof getFirstMenuItem>;
+} {
   const routes: RouteRecordRaw[] = [];
 
   // 创建根路由，使用AppLayout作为布局组件
@@ -30,6 +44,14 @@ export function generateRoutesFromMenu(
     component: AppLayout,
     children: []
   };
+
+  // 获取第一个菜单项并设置重定向
+  const firstMenuItem = getFirstMenuItem(menuData);
+  if (firstMenuItem) {
+    rootRoute.redirect = firstMenuItem.path;
+    // 设置第一个菜单项为激活状态
+    firstMenuItem.menuItem.isActive = true;
+  }
 
   // 遍历菜单组和子菜单，生成路由配置
   menuData.forEach((group) => {
@@ -55,5 +77,5 @@ export function generateRoutesFromMenu(
   });
 
   routes.push(rootRoute);
-  return routes;
+  return { routes, firstMenuItem };
 }

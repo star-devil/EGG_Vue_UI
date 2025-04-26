@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import generateRoutes from './modules';
+import generateRoutes, { firstMenuItem } from './modules';
 import { useBreadcrumb } from '../layout/composables/useBreadcrumb';
 
 const router = createRouter({
@@ -10,7 +10,12 @@ const router = createRouter({
 // 路由导航守卫，用于处理面包屑的更新
 router.beforeEach((to, _from, next) => {
   const { setBreadcrumbs } = useBreadcrumb();
-  console.log('to--', to);
+
+  // 如果访问根路径且存在第一个菜单项，自动重定向
+  if (to.path === '/' && firstMenuItem) {
+    next({ path: firstMenuItem.path });
+    return;
+  }
 
   // 根据路由meta信息更新面包屑
   if (to.meta.groupName && to.meta.menuTitle && to.meta.title) {

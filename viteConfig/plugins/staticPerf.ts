@@ -1,3 +1,6 @@
+/**
+ * @description: 静态资源压缩
+ */
 import viteImagemin from 'vite-plugin-imagemin';
 import svgLoader from 'vite-svg-loader';
 

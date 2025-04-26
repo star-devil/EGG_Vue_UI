@@ -57,7 +57,10 @@ defineProps<{
                     v-for="subItem in items.items"
                     :key="subItem.title"
                   >
-                    <SidebarMenuSubButton as-child>
+                    <SidebarMenuSubButton
+                      as-child
+                      :is-active="$route.path === subItem.url"
+                    >
                       <router-link
                         :to="subItem.url"
                         class="hover:scale-105 hover:origin-center transition-transform duration-200 ease-linear"

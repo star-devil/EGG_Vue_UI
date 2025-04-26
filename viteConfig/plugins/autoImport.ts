@@ -1,3 +1,6 @@
+/**
+ * @description: 自动导入'vue', 'vue-router', 'pinia'的api
+ */
 import AutoImport from 'unplugin-auto-import/vite';
 
 export default function setupAutoImport() {
